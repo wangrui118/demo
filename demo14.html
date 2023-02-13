@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #total {
+        width: 30%;
+        text-align: left;
+        margin-left: 300px;
+        float: left;
+      }
+      .inner {
+        margin-top: 10px;
+        float: left;
+        border-style: solid;
+      }
+      #btnList {
+        margin-right: 300px;
+        float: right;
+        width: 30%;
+        text-align: center;
+      }
+      button {
+        width: 250px;
+        margin-top: 10px;
+        border-radius: 5%;
+        border-style: solid;
+      }
+      p {
+        text-align: le;
+        margin-top: 5px;
+      }
+      ul {
+        margin-bottom: 5px;
+        float: left;
+      }
+      li {
+        float: left;
+        margin-right: 10px;
+        padding: 5px;
+        list-style-type: none;
+        border-style: solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="total">
+      <div class="inner">
+        <p>你喜欢哪个城市</p>
+
+        <ul id="city">
+          <li id="bj">北京</li>
+          <li>成都</li>
+          <li>西安</li>
+          <li>洛杉矶</li>
+        </ul>
+        <br />
+        <br />
+        <p>你喜欢哪个单机游戏?</p>
+
+        <ul id="game">
+          <li id="g1">红警</li>
+          <li>魔兽</li>
+          <li>实况</li>
+          <li>飞车</li>
+        </ul>
+
+        <br />
+        <br />
+        <p>你喜欢哪个操作系统?</p>
+
+        <ul id="phone">
+          <li>ios</li>
+          <li id="android">android</li>
+          <li>windown phone</li>
+        </ul>
+        <div class="inner">
+          gender:
+          <input type="radio" name="gender" value="male" />
+          Male
+          <input type="radio" name="gender" value="female" />
+          Female
+          <br />
+          <br />
+          name:
+          <input type="text" name="name" id="username" value="abc" />
+        </div>
+      </div>
+    </div>
+    <div id="btnList">
+      <div><button id="btn0">查找#bj节点</button></div>
+      <div><button id="btn01">查找所有li节点</button></div>
+      <div><button id="btn02">查找name = gender的所有节点</button></div>
+      <div><button id="btn03">查找#city节点</button></div>
+      <div><button id="btn04">返回#city的所有子节点</button></div>
+      <div><button id="btn05">返回#phone的第一个子节点</button></div>
+      <div><button id="btn06">返回#bj的父节点节点</button></div>
+      <div><button id="btn07">查找#android的前一个兄弟节点</button></div>
+      <div><button id="btn08">查找#username的value属性值</button></div>
+      <div><button id="btn09">设置#usernamede节点</button></div>
+      <div><button id="btn10">查找#bj文本节点</button></div>
+    </div>
+  </body>
+</html>

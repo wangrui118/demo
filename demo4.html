@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var o = new Object();
+      o.name = "张三";
+      o.age = "24";
+      o.address = "四川成都";
+      console.log(o);
+      delete o.name;
+      console.log(o);
+      o["sex"] = "男";
+      console.log(o);
+
+      var name = "sex";
+
+      console.log(o[name]);
+
+      console.log("name" in o);
+      var obj1 = new Object();
+      var obj2 = obj1;
+      obj1.name = "李四";
+      console.log(obj2.name);
+      obj2.name = "王五";
+      console.log(obj1.name);
+    </script>
+  </body>
+</html>

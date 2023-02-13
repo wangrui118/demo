@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>div移动</title>
+  </head>
+  <style>
+    #div1 {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var div1 = document.getElementById("div1");
+      document.onmousemove = function (event) {
+        // div1.style.left = event.pageX + "px";
+        // div1.style.top = event.pageY + "px";
+        var st = document.body.scrollTop || document.documentElement.scrollTop;
+
+        div1.style.left = event.clientX + st + "px";
+        div1.style.top = event.clientY + "px";
+      };
+    };
+  </script>
+  <body style="height: 1000px">
+    <div id="div1"></div>
+  </body>
+</html>

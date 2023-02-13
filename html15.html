@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+      }
+      #outer {
+        width: 500px;
+        margin: 50px auto;
+        padding: 10px;
+        background-color: greenyellow;
+        text-align: center;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        var imgPath = [
+          "892-1FH9151623.jpg",
+          "123456.png",
+          "20161124212212_nzQCh.jpeg",
+          "微信图片_20210926170626.jpg",
+        ];
+
+        var index = 0;
+        var prev = document.getElementById("prev");
+        var next = document.getElementById("next");
+
+        var img = document.getElementsByTagName("img")[0];
+
+        var info = document.getElementById("info");
+
+        prev.onclick = function () {
+          if (index == 0) {
+            index = imgPath.length - 1;
+          } else {
+            index--;
+          }
+          info.innerHTML =
+            "一共" +
+            (imgPath.length + 1) +
+            "张图片，第" +
+            (index + 1) +
+            "张图片";
+          img.src = imgPath[index];
+        };
+
+        next.onclick = function () {
+          if (index == imgPath.length - 1) {
+            index = 0;
+          } else {
+            index++;
+          }
+          info.innerHTML =
+            "一共" +
+            (imgPath.length + 1) +
+            "张图片，第" +
+            (index + 1) +
+            "张图片";
+          img.src = imgPath[index];
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <div id="outer">
+      <p id="info"></p>
+      <img src="892-1FH9151623.jpg" alt="p1" width="500px" height="500px" />
+      <button id="prev">上一张</button>
+      <button id="next">下一张</button>
+    </div>
+  </body>
+</html>

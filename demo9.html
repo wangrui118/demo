@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>工厂模式</title>
+  </head>
+  <body>
+    <script>
+      function createPerson(name, age, address) {
+        return {
+          name: name,
+          age: age,
+          address: address,
+        };
+      }
+      var zhang = createPerson("张三", 1, "成都");
+      var li = createPerson("李四", 1, "成都");
+      var wang = createPerson("王五", 1, "成都");
+      console.log(zhang.name);
+      console.log(li.name);
+      console.log(wang.name);
+    </script>
+  </body>
+</html>

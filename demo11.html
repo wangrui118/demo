@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>原型链条</title>
+  </head>
+  <body>
+    <script>
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      Person.prototype.tostring = function tostring() {
+        console.log("name:" + this.name);
+        console.log("age:" + this.age);
+      };
+      var zhang = new Person("张", 24);
+      var wang = new Person("王", 26);
+      console.log(Person.toString);
+      wang.tostring();
+      zhang.tostring();
+      console.log(zhang.__proto__.__proto__.hasOwnProperty("hasOwnProperty"));
+      console.log(Person.prototype.__proto__ == zhang.__proto__.__proto__);
+      console.log(
+        "arguments:" + Function.prototype.hasOwnProperty("arguments")
+      );
+    </script>
+  </body>
+</html>

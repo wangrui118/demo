@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>构造函数</title>
+  </head>
+  <body>
+    <script>
+      function Person(name, address, age) {
+        this.name = name;
+        this.address = address;
+        this.age = age;
+      }
+      var zhang = new Person("张三", "成都", 24);
+      console.log(zhang instanceof Person);
+      console.log(zhang.name);
+    </script>
+  </body>
+</html>

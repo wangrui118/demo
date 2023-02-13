@@ -1,0 +1,23 @@
+#div1 {
+  float: left;
+  width: 20px;
+  height: 10px;
+  border-color: black;
+  border-style: solid;
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+  background-color: pink;
+}
+
+#div2 {
+  float: left;
+  width: 20px;
+  height: 10px;
+  border-color: black;
+  border-style: solid;
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+  background-color: red;
+}

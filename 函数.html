@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>函数</title>
+  </head>
+  <body>
+    <script>
+      //Function 构造函数声明函数
+      var fun = new Function("console.log('abc');");
+      fun();
+      //函数声明构建一个函数(匿名函数)
+      var fun1 = function () {
+        console.log("声明一个函数");
+      };
+
+      fun1();
+      function fun2(params) {
+        console.log("声明一个函数");
+      }
+      fun2();
+    </script>
+  </body>
+</html>

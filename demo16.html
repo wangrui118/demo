@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <title>stopPropagation阻止冒泡--康董www.web666.net</title>
+    <style>
+      body {
+        color: #333;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      什么是事件冒泡,通俗的来讲就是
+      我们为页面内body添加一个单击事件,同样再为页面内li元素添加一个单击事件..当你单击li的时候.<br />
+      body的事件也会被触发.....因为li被包含在body元素内...你单击了li同时也单击了body...这就是事件冒泡....<br />
+      在有些时候.我们要阻止这种情况发生...也就是单击li事件.不会触发body的事件....
+      这就叫阻止冒泡!
+    </p>
+
+    <div id="a">
+      <ul id="lia">
+        请单击下面的列表.会触发body事件
+        <li>项目1</li>
+        <li>项目2</li>
+        <li>项目3</li>
+      </ul>
+
+      <ul id="lib">
+        请单下面的列表.不会触发body事件.
+        <li>项目1</li>
+        <li>项目2</li>
+        <li>项目3</li>
+      </ul>
+    </div>
+    <script language="javascript">
+      document.body.onclick = function () {
+        //首先为body元素绑定一个单击事件
+        alert("BODY事件"); //单击页面即弹出对话框
+      };
+
+      function att_Event() {
+        //为第一组li元素绑定onclick事件
+        var li = document.getElementById("lia").getElementsByTagName("li");
+        for (var i = 0; i < li.length; i++) {
+          li[i].onclick = function () {
+            alert("Li事件");
+          };
+        }
+      }
+
+      function att_Event_b() {
+        //为第二组li元素绑定onclick事件
+        var li = document.getElementById("lib").getElementsByTagName("li");
+        for (var i = 0; i < li.length; i++) {
+          li[i].onclick = function (e) {
+            alert("Li事件");
+            stopBubble(e); //运行阻止冒泡的函数
+          };
+        }
+      }
+      //该函数的功能用来阻止事件冒泡．并兼容多浏览器
+      function stopBubble(e) {
+        //如果传入了事件对象.那么就是非IE浏览器
+        if (e) {
+          console.log("123456");
+          console.log(e);
+          e.stopPropagation();
+          //因此它支持W3C的stopPropation()方法
+        } else {
+          console.log("123456");
+          //否则,我们得使用IE的方式来取消事件冒泡
+          window.event.cancelBubble = true;
+        }
+      }
+
+      window.onload = function () {
+        att_Event();
+        att_Event_b();
+      };
+    </script>
+  </body>
+</html>

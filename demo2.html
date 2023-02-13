@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>const 定义常量</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script>
+      //常量的值不允许修改
+      //块级作用域
+      const A = "常量";
+      {
+        const PLAYER = "UZI";
+      }
+      //console.log(PLAYER);
+      //常量数组可以修改数组种的常量元素  不能直接修改数组
+      const PLAYERS = ["UZI", "MLXG"];
+      for (var i = 0; i < PLAYERS.length; i++) {
+        console.log(PLAYERS[i]);
+        console.log(window.i);
+      }
+      PLAYERS.push("MING");
+      for (var i = 0; i < PLAYERS.length; i++) {
+        console.log(PLAYERS[i]);
+        console.log(window.i);
+      }
+    </script>
+  </body>
+</html>

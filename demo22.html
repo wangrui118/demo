@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>事件的委派</title>
+  </head>
+  <script>
+    window.onload = function () {
+      var ul1 = document.getElementById("ul1");
+      var btn0 = document.getElementById("btn0");
+      ul1.onclick = function (event) {
+        event = event || document.event;
+        console.log(event.target.innerHTML);
+        console.log(event.target.nodeName);
+        if (event.target.className == "link") {
+          alert(event.target.innerHTML);
+        }
+      };
+      btn0.onclick = function () {
+        var li = document.createElement("li");
+        li.innerHTML = "<a href='javascript:;' class='link'>新创建的连接</a>";
+        ul1.appendChild(li);
+      };
+    };
+  </script>
+  <body>
+    <button id="btn0">添加超链接</button>
+    <ul style="background-color: #bfa" id="ul1">
+      <li><a href="javascript:;" class="link">超链接1</a></li>
+      <li><a href="javascript:;" class="link">超链接2</a></li>
+      <li><a href="javascript:;" class="link">超链接3</a></li>
+      <li><a href="javascript:;" class="link">超链接4</a></li>
+    </ul>
+  </body>
+</html>

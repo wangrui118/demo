@@ -1,0 +1,96 @@
+1.js中一共有6中数据类型
+基本数据类型 string Number Boolean null（空值） undefine(未定义)
+引用数据类型 object 
+Number 超过最大值 Infinity(typeof Infinity = "Number")
+(typeof NaN = "Number")
+(typeof null = "object")
+(typeof undefine = "undefine")
+undefine 和null  不能调用 toString();
+String() 可以用于强制类型转换
+Number(Boolean) true = 1 false 0
+Number(undefine) NaN
+Number(null)  0
+ParsInt(a) // 可以将字符串中的有效数字去除 从左取 
+a = a++  等价于var b = a++; a=b;（=优先级大于++的优先级造成）
+a = a-- 同理
+iSNaN() 检查值是否是NaN (NaN不与任何值相等)
+null == 0 false undefine = null true;
+{}中要么执行 要么都不执行
+基本数据类型保存在栈内存中,
+引用数据类型 栈内存一个名明指向堆内存中的一个地址
+new object() ==new object false 比较的是堆内存中指向的地址
+解析器不会解析多传递的参数
+立即执行函数
+(function(){
+
+})()  立即执行函数只会执行一次
+函数也可以是一个对象的属性 
+创建的变量都会成为window对象的属性
+
+使用函数声明式的函数 function 函数(){}
+  他会在所有的代码执行之前被创建，所以我们可以在函数声明前来调用函数
+使用函数表达式创建的函数，不会被提前声明,所以不能在声明前调用
+
+函数作用域中可以访问到全局作用域  全局作用域中不能访问到全局作用域
+当参数名相同时先在自己函数作用域找若不存在则向上一级函数找
+
+构造函数执行流程
+1.new 关键字立刻创建一个新的对象
+2.将新建的对象设置为函数中的this,在构造函数中可以使用this来引用新建的对象
+3.逐行指向函数中的代码
+4.将新建的对象作为返回值返回
+原型链
+函数也可以是一个对象的属性 对象属性都又属性值_proto_
+函数都有一个属性prototype 而 prototype 也有属性值_proto_
+通过构造函数创建的对象 _proto_的属性值都回同构造函数的prototype值相同
+--function 的 call() 和apply()方法 可以将一个对象指定第一个参数 
+此时这个对象将成为执行函数的this
+--call() 方法可以将实参在对象之后依次传递
+--apply() 方法可以将实参封装到一个数组中传递
+this的情况
+1.以函数调用的方式this永远都是window
+2.以方法调用的方式this是调用的对象
+3.以构造函数的形式调用时,this是新创建的那个对象
+4.使用call和apply调用时,this是指定的那个对象
+arguments
+arguments是一个类数组对象
+arguments.length 可以用来获取实参的个数
+arguments.callee 这个属性对应的函数对象标识当前执行的函数对象
+基本数据类型转换包装数据类型回创建一个新的包装对象类型
+onload 当页面加载成功是执行
+MATH 函数 取整向上取整  ceil 向下取整 floor 四舍五入取整round 
+MATH.random() 可以生成0-1之间的随机数 不包含0或者1
+正则表达式
+var reg = new RegEXP("a","i") 等同于 reg = /a/i (自变量模式)
+reg.test();
+正则表达式拆分字符串
+var str = a1b2c3d4e5f6g7h8
+str.split(/[A-z]/) = [1,2,3,4,5,6,7,8]
+正则表达式查询
+str.search(/a/); 搜索字符串中是否包含匹配正则的字符串 返回字符下标
+str.match(//gi); 将匹配到的数字返回到一个数组中返回 g获取所有i忽略大小写
+str.replace(//,); 替换匹配正则表达式的字符串
+
+document.querySelectot("") 可以更具css选择器选择一个节点 
+该方法总会返回唯一元素 如果有多个只会返回第一个元素
+document.querySelectorAll("") 该方法和上方法一样 
+将查询到的所有都封装到一个数组
+
+在css 中如果用了!important 则不能修改样式
+通过style 属性读取的都是内联样式
+//只有IE支持currentStyle 
+通过currentStyle 属性读取当前显示样式 如果当前元素没有属性，则获取它的默认值
+//其他浏览器可以使用 windown对象的方法
+var styles =  getComputedStyle(); 需要两个参数 1.需要获取样式的元素(dom元素)
+返回一个样式集 styles.样式名 获取样式
+元素的clientWidth clientHeight 获取元素的可见高度 获取的是内容的宽度和高度 包括内容区和内边距 不包含滚动条距离 （只读）  
+offsetParent 获取离当前元素最近开启想对定位的元素
+offsetLeft  水平偏移量
+offsetTop   垂直便宜量
+scrollWidth scrollHeight 滚动宽度 滚动高度
+scrollLeft scrollTop 获取水平 垂直滚动条距离
+当scroHeight-scroTop = clientHeigth 滚动条滚动到底
+clientX clientY 相对于可见文本框
+pageX pageY 相对于整个页面
+冒泡事件 event.cancelBubble=true 取消冒泡事件 若没有传递event 则到windown取 windown.event
+事件的委派 将事件统一绑定到元元素共同的祖先元素（可以减少事件的绑定次数）
